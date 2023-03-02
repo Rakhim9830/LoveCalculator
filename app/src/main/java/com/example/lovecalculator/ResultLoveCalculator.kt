@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.databinding.FragmentResultLoveCalculatorBinding
-import com.example.lovecalculator.model.LoveModel
-import kotlin.io.path.fileVisitor
+import com.example.lovecalculator.remote.LoveModel
 
 class ResultLoveCalculator : Fragment() {
     private lateinit var binding: FragmentResultLoveCalculatorBinding
