@@ -26,4 +26,9 @@
             android:id="@+id/action_mainFragment_to_resultLoveCalculator"
             app:destination="@id/resultLoveCalculator" />
     </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.lovecalculator.Board.Boarding"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
 </navigation>
