@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -37,6 +38,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initClicker()
         findNavController().navigate(R.id.onBoardingFragment)
+
     }
 
     private fun initClicker() {
@@ -44,7 +46,7 @@ class MainFragment : Fragment() {
                btnCalculate.setOnClickListener {
                   viewModel.getLiveLove(firstname = edFirstName.text.toString(), secondName= edSecontdame.text.toString()).observe(viewLifecycleOwner,
                       Observer {
-                          LoveModel -> findNavController().navigate(R.id.resultLoveCalculator)
+                          LoveModel -> findNavController().navigate(R.id.resultLoveCalculator, bundleOf("result" to LoveModel))
                       })
                }
            }
