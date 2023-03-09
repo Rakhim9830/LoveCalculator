@@ -19,10 +19,12 @@ class Repository  @Inject constructor(val api:LoveApi){
             }
 
             override fun onFailure(call: Call<LoveModel>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })
         return liveLoveData
     }
+
+
 }

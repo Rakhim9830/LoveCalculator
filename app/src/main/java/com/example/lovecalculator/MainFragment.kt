@@ -37,7 +37,9 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initClicker()
-        findNavController().navigate(R.id.onBoardingFragment)
+        binding.historyBtn.setOnClickListener {
+            findNavController().navigate(R.id.historyFragment)
+        }
 
     }
 
@@ -47,6 +49,7 @@ class MainFragment : Fragment() {
                   viewModel.getLiveLove(firstname = edFirstName.text.toString(), secondName= edSecontdame.text.toString()).observe(viewLifecycleOwner,
                       Observer {
                           LoveModel -> findNavController().navigate(R.id.resultLoveCalculator, bundleOf("result" to LoveModel))
+                          App.dataBase.loveDao().insert(loveModel = LoveModel)
                       })
                }
            }

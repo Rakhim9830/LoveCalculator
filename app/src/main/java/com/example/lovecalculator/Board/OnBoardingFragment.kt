@@ -33,8 +33,11 @@ class Boarding: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pref = Pref(requireContext())
-        val adapter1 = Adapter(this::onClick)
 
+        if (pref.isUserSeen()){
+            findNavController().navigate(R.id.mainFragment)
+        }
+        val adapter1 = Adapter(this::onClick)
         val dotsIndicator = binding.dotsIndicator
         val viewPager = binding.pager
         viewPager.adapter = adapter1

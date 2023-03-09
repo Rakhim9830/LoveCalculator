@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".History.HistoryFragment">
+
+<ImageView
+    android:layout_width="450dp"
+    android:layout_height="300dp"
+    android:background="@drawable/love"
+    android:layout_gravity="center"
+    android:id="@+id/image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/history"
+        android:textColor="@color/purple"
+        android:textSize="40sp"
+        android:id="@+id/txt_history"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="wrap_content"
+        android:id="@+id/history_rv"/>
+
+    <Button
+        android:id="@+id/home_btn"
+        android:background="@drawable/heart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="130dp"/>
+
+
+</LinearLayout>
