@@ -10,10 +10,10 @@ import com.example.lovecalculator.databinding.BoardItemBinding
 
 class Adapter (private val onClick:() -> Unit): RecyclerView.Adapter<Adapter.OnBoardingViewHolder>() {
     private val data = arrayListOf(
-          com.example.lovecalculator.Board.Model("HAVE A GOOD TIME","you should take the time to help those who need you", R.drawable.imagefirst),
-          com.example.lovecalculator.Board.Model("CHERISHING LOVE","It is now no longer possible for ypu tp cherish love ", R.drawable.imagesecond),
-          com.example.lovecalculator.Board.Model("HAVE A BREAK UP?","We have made to correction for you dont worry, Maybe someone is waiting for you!", R.drawable.imagethird),
-          com.example.lovecalculator.Board.Model("","Its Funs And Many More", R.drawable.love),
+          com.example.lovecalculator.Board.Model("HAVE A GOOD TIME","you should take the time to help those who need you", R.raw.animation1),
+          com.example.lovecalculator.Board.Model("CHERISHING LOVE","It is now no longer possible for ypu tp cherish love ", R.raw.animation2),
+          com.example.lovecalculator.Board.Model("HAVE A BREAK UP?","We have made to correction for you dont worry, Maybe someone is waiting for you!", R.raw.animation3),
+          com.example.lovecalculator.Board.Model("","Its Funs And Many More", R.raw.animation4),
 
 
     )
@@ -32,6 +32,7 @@ class Adapter (private val onClick:() -> Unit): RecyclerView.Adapter<Adapter.OnB
 
     inner class OnBoardingViewHolder(private val binding:BoardItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(model: com.example.lovecalculator.Board.Model) {
+            model.image.let { it?.let { it1 -> binding.imageBoard.setAnimation(it1) } }
             binding.titleBoard.text = model.title
             binding.descBoard.text = model.decs
             binding.btnStart.isVisible = adapterPosition == data.lastIndex
